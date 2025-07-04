@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 @Entity
 @Table(name = "users")
@@ -16,7 +18,9 @@ public class User {
 	private String Tel;
 	private String motPasse;
 	private String confirmMotPasse;
-	private  String role;
+	@ManyToOne
+    @JoinColumn(name = "role_id")
+    private Role role;
 	
 	
 	public User() {
@@ -24,7 +28,7 @@ public class User {
 		
 	}
 	
-	public User(String username, String email, String tel, String motPasse, String confirmMotPasse, String role,
+	public User(String username, String email, String tel, String motPasse, String confirmMotPasse, Role role,
 			boolean active, String image) {
 		super();
 		this.username = username;
@@ -67,10 +71,10 @@ public class User {
 	public void setConfirmMotPasse(String confirmMotPasse) {
 		this.confirmMotPasse = confirmMotPasse;
 	}
-	public String getRole() {
+	public Role getRole() {
 		return role;
 	}
-	public void setRole(String role) {
+	public void setRole(Role role) {
 		this.role = role;
 	}
 	
