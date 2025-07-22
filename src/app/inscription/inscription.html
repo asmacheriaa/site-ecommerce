@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscription - Alpha Services et Maintenance</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ </head>
+<body>
+  <div class="app-container">
+   <!-- Composant Logo -->
+<div class="alpha-logo">
+ 
+  <a href="home">
+    <img src="ALPHA.jpg" alt="Alpha Services et Maintenance" class="logo-img">
+  </a>
+</div>
+
+    <div class="registration-container">
+      <!-- Composant Panneau Gauche -->
+      <div class="left-panel">
+        <div class="panel-content">
+       <h2>Rejoignez notre communauté</h2>
+        <p>Créez un compte pour accéder à tous nos services exclusifs et bénéficier d'une expérience personnalisée.</p>
+        <ul class="features">
+          <li><i class="fas fa-cogs"></i><span>Ventes piéces de rechanges et maintenance</span></li>
+          <li><i class="fas fa-shield-alt"></i><span>Sécurité de vos données garantie</span></li>
+          <li><i class="fas fa-bolt"></i><span>Inscription rapide et simple</span></li>
+          <li><i class="fas fa-headset"></i><span>Support client 24/7</span></li>
+          <li><i class="fas fa-gift"></i><span>Offres exclusives pour les nouveaux membres</span></li>
+        </ul>
+      </div>
+      </div>
+      <!-- Composant Panneau Droit -->
+      <div class="right-panel">
+        <div class="form-header">
+          <h3>Créez votre compte</h3>
+          <p>Remplissez les informations ci-dessous pour commencer</p>
+        </div>
+        <!-- Composant Formulaire -->
+       <form #form>
+  <div style="display: flex; gap: 15px;">
+    <div class="form-group" style="flex: 1;">
+      <label>Nom *</label>
+      <div class="input-container">
+        <i class="input-icon fas fa-user"></i>
+        <input type="text" id="nom" #nom class="form-control" placeholder="Entrez votre nom" required pattern="[A-Za-zÀ-ÿ\s]*">
+      </div>
+    </div>
+    <div class="form-group" style="flex: 1;">
+      <label>Prénom *</label>
+      <div class="input-container">
+        <i class="input-icon fas fa-user"></i>
+        <input type="text" id="prenom" #prenom class="form-control" placeholder="Entrez votre prénom" required pattern="[A-Za-zÀ-ÿ\s]*">
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Adresse *</label>
+    <div class="input-container">
+      <i class="input-icon fas fa-home"></i>
+      <input type="text" id="adresse" #adresse class="form-control" placeholder="Votre adresse complète" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Email *</label>
+    <div class="input-container">
+      <i class="input-icon fas fa-envelope"></i>
+      <input type="email" id="email" #email class="form-control" placeholder="exemple@gmail.com" required>
+    </div>
+    <div class="email-validation" id="emailValidation" #emailValidation>
+      <i class="fas fa-info-circle"></i>
+      <span>Veuillez entrer une adresse email valide</span>
+    </div>
+  </div>
+          <!-- Composant Téléphone -->
+          <div class="form-group">
+  <label>Téléphone *</label>
+<div class="input-container">
+  <i class="input-icon fas fa-phone"></i>
+    <div class="phone-number">
+      <input type="tel" #telephone id="telephone" class="form-control" placeholder="Numéro de téléphone" required pattern="[0-9]{8,15}" title="8 à 15 chiffres">
+    </div>
+  </div>
+</div>    
+          <!-- Composant Mot de passe -->
+          <div class="form-group">
+            <label>Mot de passe *</label>
+            <div class="password-container">
+              <i class="input-icon fas fa-lock"></i>
+              <input type="password" id="motdePasse" class="form-control" 
+                     placeholder="Créez un mot de passe" maxlength="8" required
+                     pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,8}$">
+              <span class="toggle-password" id="togglePassword">
+                <i class="fas fa-eye"></i>
+              </span>
+            </div>
+            <div class="password-strength">
+              <div class="password-strength-bar" id="passwordStrength"></div>
+            </div>
+            <div class="form-text">4-8 caractères avec lettres et chiffres</div>
+          </div>
+          <!-- Confirmation mot de passe -->
+          <div class="form-group">
+            <label>Confirmer le mot de passe *</label>
+            <div class="password-container">
+              <i class="input-icon fas fa-lock"></i>
+              <input type="password" id="confirmPassword" class="form-control" 
+                     placeholder="Confirmez votre mot de passe" maxlength="8" required>
+            </div>
+          </div>
+          <!-- Composant Rôle -->
+    <!-- Composant Rôle amélioré -->
+  <!-- Composant Rôle avec boutons -->
+<div>
+  <h4>Choisissez votre rôle :</h4>
+  <label>
+    <input type="radio" name="role" value="Client" (change)="choisirRole('Client')" />
+    Client
+  </label>
+  <label>
+    <input type="radio" name="role" value="Fournisseur" (change)="choisirRole('Fournisseur')" />
+    Fournisseur
+  </label>
+</div>
+<button type="submit" class="btn-submit">
+  <i class="fas fa-user-plus"></i> S'INSCRIRE MAINTENANT
+</button>
+        <!-- Composant Footer -->
+        <div class="form-footer">
+         <p>Vous avez déjà un compte? <a [routerLink]="['/login']">Connectez-vous ici</a></p>
+        </div>
