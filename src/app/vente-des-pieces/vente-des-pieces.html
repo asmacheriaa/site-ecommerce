@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha Service - Vente des Pièces de Rechange</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
+<body>
+    <!-- Particles Background -->
+<div class="particles" id="particles"></div>
+<!-- Header -->
+<header>
+  <div class="container header-container">
+    <nav>
+      <div class="alpha-logo">
+        <img src="ALPHAbg.png" alt="Alpha Services et Maintenance" class="logo-img">
+      </div>
+                <ul id="nav-menu">
+                    <li><a href="#home"><i class="fas fa-home"></i> Accueil</a></li>
+                    <li><a href="#Actualités"><i class="fas fa-blog"></i> Actualités</a></li>
+                    <li><a href="#services"><i class="fas fa-cogs"></i> Services</a></li>
+                    <li><a href="#about"><i class="fas fa-info-circle"></i> À Propos</a></li>
+                    <li><a href="#clients"><i class="fas fa-handshake"></i> Clients</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="login"><i class="fas fa-user"></i> Connexion</a></li>
+                </ul>
+                <button class="mobile-menu-btn" id="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+        <div class="container">
+           <div class="center-container">
+  <h1 class="centered"><i class="fas fa-cogs"></i> Vente des Pièces de Rechange</h1>
+</div>
+            <p class="subtitle">Fournisseur officiel de pièces d'origine pour équipements industriels, de construction et grues mobiles</p>
+ <!-- Section de recherche -->
+<div class="search-section">
+  <!-- Catégorie -->
+  <div class="search-field">
+    <label for="category">Catégorie</label>
+    <div class="select-wrapper">
+      <select id="category" (change)="onCategoryChange($event)">
+        <option disabled selected>Choisir une catégorie...</option>
+        <option value="Électrique">Électrique</option>
+        <option value="Mécanique">Mécanique</option>
+        <option value="Hydraulique">Hydraulique</option>
+        <option value="Pneumatique">Pneumatique</option>
+        <option value="Autre">Autre</option>
+      </select>
+
+      <!-- Input visible si "Autre" -->
+      <div class="autre-input" *ngIf="showCategoryInput">
+        <label for="customCategory">Autre catégorie :</label>
+        <input type="text" id="customCategory" placeholder="Saisir autre catégorie..." />
+      </div>
+    </div>
+  </div>
+
+  <!-- Marque -->
+  <div class="search-field">
+    <label for="brand">Marque</label>
+    <div class="select-wrapper">
+      <select id="brand" (change)="onBrandChange($event)">
+        <option disabled selected>Choisir une marque...</option>
+        <option value="Volvo">Volvo</option>
+        <option value="Komatsu">Komatsu</option>
+        <option value="Liebherr">Liebherr</option>
+        <option value="Terex">Terex</option>
+        <option value="Autre">Autre</option>
+      </select>
+
+      <!-- Input visible si "Autre" -->
+     <div class="autre-input" *ngIf="showBrandInput">
+  <label for="customBrand">Autre marque :</label>
+  <input type="text" id="customBrand" placeholder="Saisir autre marque..." />
+</div>
+    </div>
+  </div>
+
+  <!-- Recherche -->
+  <div class="search-field full-width">
+    <label for="search">Rechercher Pièce</label>
+    <input type="text" id="search" placeholder="Nom ou référence de la pièce...">
+  </div>
+</div>
+</div>
+
+    <div class="container">
+        <section class="main-content">
+            <h2 class="section-title">Nos Catégories de Pièces</h2>
+            
+            <table class="categories-table">
+                <thead>
+                    <tr>
+                        <th>Catégorie</th>
+                        <th>Description</th>
+                        <th class="action-cell">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="pieces-industrielles.html" class="category-link">
+                                <div class="category-icon">
+                                    <i class="fas fa-industry"></i>
+                                </div>
+                                <div>
+                                    <div class="category-name">Pièces Industrielles</div>
+                                    <div class="category-desc">Galets, roulements, pièces de guidage, courroies</div>
+                                </div>
+                            </a>
+                        </td>
+                        <td>
+                            <div class="category-desc">Pièces pour machines industrielles dans tous les domaines : plasturgie, machines-outils, pharmaceutique</div>
+                        </td>
+                        <td class="action-cell">
+                            <a href="pieces-industrielles.html" class="view-button">Voir</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="grues-mobiles.html" class="category-link">
+                                <div class="category-icon">
+                                    <i class="fas fa-crane"></i>
+                                </div>
+                                <div>
+                                    <div class="category-name">Pièces pour Grues Mobiles</div>
+                                    <div class="category-desc">Terex Demag, Liebherr, Tadano Faun, Grove</div>
+                                </div>
+                            </a>
+                        </td>
+                        <td>
+                            <div class="category-desc">Pièces d'origine pour grues mobiles modèles LTM1055 à LTM1400</div>
+                        </td>
+                        <td class="action-cell">
+                            <a href="grues-mobiles.html" class="view-button">Voir</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="hydrauliques.html" class="category-link">
+                                <div class="category-icon">
+                                    <i class="fas fa-tint"></i>
+                                </div>
+                                <div>
+                                    <div class="category-name">Pièces Hydrauliques</div>
+                                    <div class="category-desc">Bobines, valves, kits de réparation</div>
+                                </div>
+                            </a>
+                        </td>
+                        <td>
+                            <div class="category-desc">Composants hydrauliques pour équipements de construction et grues mobiles</div>
+                        </td>
+                        <td class="action-cell">
+                            <a href="hydrauliques.html" class="view-button">Voir</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="electriques.html" class="category-link">
+                                <div class="category-icon">
+                                    <i class="fas fa-bolt"></i>
+                                </div>
+                                <div>
+                                    <div class="category-name">Pièces Électriques</div>
+                                    <div class="category-desc">Systèmes de contrôle, composants électroniques</div>
+                                </div>
+                            </a>
+                        </td>
+                        <td>
+                            <div class="category-desc">Systèmes de contrôle de charge CEC PAT / LICCON et pièces électriques pour engins</div>
+                        </td>
+                        <td class="action-cell">
+                            <a href="electriques.html" class="view-button">Voir</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="mecanique-pneumatiques.html" class="category-link">
+                                <div class="category-icon">
+                                    <i class="fas fa-wrench"></i>
+                                </div>
+                                <div>
+                                    <div class="category-name">Pièces Mécaniques et Pneumatiques</div>
+                                    <div class="category-desc">Composants de maintenance</div>
+                                </div>
+                            </a>
+                        </td>
+                        <td>
+                            <div class="category-desc">Pièces de maintenance pour équipements industriels et de construction</div>
+                        </td>
+                        <td class="action-cell">
+                            <a href="mecanique-pneumatiques.html" class="view-button">Voir</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="engins-chantier.html" class="category-link">
+                                <div class="category-icon">
+                                    <i class="fas fa-truck-monster"></i>
+                                </div>
+                                <div>
+                                    <div class="category-name">Pièces pour Engins de Chantier</div>
+                                    <div class="category-desc">Pelles, chargeurs, bulldozers, niveleuses</div>
+                                </div>
+                            </a>
+                        </td>
+                        <td>
+                            <div class="category-desc">Pièces pour pelles, chargeurs, bulldozers, niveleuses et compacteurs (Volvo, Caterpillar, Komatsu)</div>
+                        </td>
+                        <td class="action-cell">
+                            <a href="engins-chantier.html" class="view-button">Voir</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="stats-section">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <div class="stat-number">15,000+</div>
+                    <div class="stat-text">Pièces en stock</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <div class="stat-number">24h-48h</div>
+                    <div class="stat-text">Délai de livraison</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <div class="stat-number">50+</div>
+                    <div class="stat-text">Marques disponibles</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number">500+</div>
+                    <div class="stat-text">Clients satisfaits</div>
+                </div>
+            </div>
+            
+            <div class="brands-section">
+                <h2 class="section-title">Marques Disponibles</h2>
+                <div class="brands-container">
+                    <div class="brand-card">
+                        <i class="fas fa-cogs"></i>
+                        <h3>DOOSAN</h3>
+                        <p>Pièces d'origine</p>
+                    </div>
+                    <div class="brand-card">
+                        <i class="fas fa-excavator"></i>
+                        <h3>KOMATSU</h3>
+                        <p>Composants certifiés</p>
+                    </div>
+                    <div class="brand-card">
+                        <i class="fas fa-truck-pickup"></i>
+                        <h3>VOLVO</h3>
+                        <p>Pièces de rechange</p>
+                    </div>
+                    <div class="brand-card">
+                        <i class="fas fa-tractor"></i>
+                        <h3>CAT</h3>
+                        <p>Caterpillar</p>
+                    </div>
+                    <div class="brand-card">
+                        <i class="fas fa-crane"></i>
+                        <h3>LIEBHERR</h3>
+                        <p>Grues mobiles</p>
+                    </div>
+                    <div class="brand-card">
+                        <i class="fas fa-industry"></i>
+                        <h3>TEREX</h3>
+                        <p>Demag</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cta-section">
+                <h2 class="cta-title">Besoin de pièces spécifiques ?</h2>
+                <p class="cta-text">Notre équipe technique est à votre disposition pour identifier rapidement les pièces dont vous avez besoin avec notre expertise de plus de 20 ans dans le secteur.</p>
+                <a href="contact.html" class="cta-button">Contactez-nous <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+    </div>
+ <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-col">
+                <h3>Alpha Service et Maintenance</h3>
+                <p>Fournisseur de services intégrés de qualité pour les entreprises en Tunisie depuis 2005.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/sparepartsalpha"><i class="fab fa-facebook-f "></i></a>   
+                    <a href="https://www.linkedin.com/in/alpha-services-and-maintenance-49aa52178/"><i class="fab fa-linkedin-in" ></i></a>
+                    <a href="https://www.youtube.com/@alphaserviceetmaintenance8598"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Liens Rapides</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Accueil</a></li>
+                    <li><a href="#blog">Actualités</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">À Propos</a></li>
+                    <li><a href="#clients">Clients</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Nos Services</h3>
+                <ul class="footer-links">
+                    <li><a href="">Vente des pièces de rechange</a></li>
+                    <li><a href="">Conception de maintenance et formation</a></li>
+                    <li><a href="">Fabrication de maintenance et formation</a></li>
+                    <li><a href="">Optimisation de maintenance et formation</a></li>
+                    <li><a href="">gestion de maintenance et formation</a></li>
+                  <li><a href="">Maintenance hydraulique, électrique et mécanique industrielle</a></li>
+                  <li><a href="">Vente des machines industrielles</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <p>&copy; Alpha Service et Maintenance .| Conçu avec <i class="fas fa-heart" style="color: red;"></i> en Tunisie</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

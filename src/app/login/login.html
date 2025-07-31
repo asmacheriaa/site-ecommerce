@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion - Alpha Services et Maintenance</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+<body>
+  <div class="app-container">
+    <!-- Composant Logo -->
+ <div class="alpha-logo">
+       <img src="https://tse3.mm.bing.net/th/id/OIP.5j3JAgpqwBRJ9atM_EXq9wAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Alpha Services et Maintenance" class="logo-img">
+
+    </div>
+    
+    
+    <div class="login-container">
+      <!-- Composant Panneau Gauche -->
+      <div class="left-panel">
+        <div class="panel-content">
+          <h2>Bienvenue de retour</h2>
+          <p>Connectez-vous à votre compte pour accéder à tous nos services exclusifs et gérer vos demandes.</p>
+          
+          <ul class="features">
+            <li>
+              <i class="fas fa-rocket"></i>
+              <span>Accédez rapidement à votre tableau de bord personnalisé</span>
+            </li>
+            <li>
+              <i class="fas fa-history"></i>
+              <span>Consultez l'historique de vos demandes et interventions</span>
+            </li>
+            <li>
+              <i class="fas fa-file-invoice"></i>
+              <span>Téléchargez vos factures et documents administratifs</span>
+            </li>
+            <li>
+              <i class="fas fa-cog"></i>
+              <span>Personnalisez vos préférences et informations de compte</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Composant Panneau Droit -->
+      <div class="right-panel">
+        <div class="form-header">
+          <h3>Connexion à votre compte</h3>
+          <p>Entrez vos identifiants pour accéder à votre espace</p>
+        </div>
+        
+
+        
+        <!-- Composant Formulaire -->
+        <form id="loginForm">
+          <!-- Champ Email -->
+<div class="form-group">
+  <label>Email *</label>
+  <div class="password-container"> <!-- nestaamlouha meme structure -->
+    <i class="input-icon fas fa-envelope"></i>
+    <input type="email" id="loginEmail" class="form-control" placeholder="exemple@domaine.com" required>
+  </div>
+</div>
+
+<!-- Champ Mot de passe -->
+<div class="form-group">
+  <label>Mot de passe *</label>
+  <div class="password-container">
+    <i class="input-icon fas fa-lock"></i>
+    <input type="password" id="loginPassword" class="form-control" placeholder="Entrez votre mot de passe" required>
+    <span class="toggle-password" id="loginTogglePassword">
+      <i class="fas fa-eye"></i>
+    </span>
+  </div>
+</div>
+          <!-- Options supplémentaires -->
+          <div class="login-options">
+            <div class="remember-me">
+              <input type="checkbox" id="remember">
+              <label for="remember">Se souvenir de moi</label>
+            </div>
+            <a href="#" class="forgot-password" id="forgotPasswordLink">Mot de passe oublié ?</a>
+          </div>
+          
+          <!-- Composant Bouton -->
+          <button type="submit" class="btn-submit">
+            <i class="fas fa-sign-in-alt"></i> SE CONNECTER 
+          </button>
+          
+          <!-- Séparateur -->
+          <div class="separator">
+            <span>ou connectez-vous avec</span>
+          </div>
+          
+          <!-- Boutons de connexion sociale -->
+          <div class="social-login">
+            <div class="social-btn linkedin" id="linkedinLogin">
+              <a href="https://www.linkedin.com/in/alpha-services-and-maintenance-49aa52178/"><i class="fab fa-linkedin-in" ></i></a>
+         
+            </div>
+            <div class="social-btn facebook" id="facebookLogin">
+              <a href="https://www.facebook.com/sparepartsalpha"><i class="fab fa-facebook-f "></i></a> 
+            
+            </div>
+          </div>
+        </form>
+
+        <!-- Composant Footer -->
+        <div class="form-footer">
+          <p>Vous n'avez pas de compte? <a href="/inscription">Inscrivez-vous ici</a></p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
